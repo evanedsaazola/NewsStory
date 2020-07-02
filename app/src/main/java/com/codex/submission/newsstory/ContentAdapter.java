@@ -1,6 +1,7 @@
 package com.codex.submission.newsstory;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,6 +37,13 @@ public class ContentAdapter extends RecyclerView.Adapter<ContentAdapter.ContentV
         holder.tv_item_title.setText(contentDataModel.getContentTitle());
         holder.tv_item_total_comment.setText(String.valueOf(contentDataModel.getContentTotalComments()));
         holder.tv_item_score.setText(String.valueOf(contentDataModel.getContentScore()));
+
+        holder.bind(contentDataModel);
+        holder.itemView.setOnClickListener(view -> {
+            Intent intent = new Intent(context, ContentDetailActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            context.startActivity(intent);
+        });
     }
 
     @Override
@@ -46,6 +54,7 @@ public class ContentAdapter extends RecyclerView.Adapter<ContentAdapter.ContentV
     public class ContentViewHolder extends RecyclerView.ViewHolder {
 
         private TextView tv_item_title, tv_item_total_comment, tv_item_score;
+        private ContentDataModel contentDataModel;
 
         public ContentViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -54,5 +63,10 @@ public class ContentAdapter extends RecyclerView.Adapter<ContentAdapter.ContentV
             tv_item_total_comment = itemView.findViewById(R.id.tvItemComment);
             tv_item_score = itemView.findViewById(R.id.tvItemScore);
         }
+
+        void bind(ContentDataModel contentDataModel) {
+            this.contentDataModel = contentDataModel;
+        }
+
     }
 }

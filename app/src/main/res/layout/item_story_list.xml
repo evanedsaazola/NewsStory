@@ -9,6 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
+        android:backgroundTint="@color/colorPrimaryDark"
         android:padding="8dp"
         app:cardCornerRadius="8dp"
         app:cardElevation="6dp">
@@ -26,7 +27,7 @@
                 android:ellipsize="end"
                 android:maxLines="3"
                 android:text="Ask HN: What is the hardest problem you have ever solved?"
-                android:textColor="@color/colorBlack"
+                android:textColor="@color/colorWhite"
                 android:textSize="14sp"
                 android:textStyle="bold"/>
 
@@ -46,7 +47,7 @@
                     android:drawablePadding="4dp"
                     android:gravity="center_vertical"
                     android:text="486"
-                    android:textColor="@color/colorBlack"
+                    android:textColor="@color/colorWhite"
                     android:textSize="12sp" />
 
                 <TextView
@@ -59,7 +60,7 @@
                     android:drawablePadding="4dp"
                     android:gravity="center_vertical"
                     android:text="386"
-                    android:textColor="@color/colorBlack"
+                    android:textColor="@color/colorWhite"
                     android:textSize="12sp"/>
 
             </LinearLayout>
